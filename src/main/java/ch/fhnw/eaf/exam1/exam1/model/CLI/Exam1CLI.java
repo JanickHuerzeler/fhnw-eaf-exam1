@@ -39,8 +39,8 @@ public class Exam1CLI implements CommandLineRunner {
         a1.setPerson(p1);
         a2.setPerson(p2);
 
-        Address a = em.merge(a1);
-        em.persist(a3);
+        Address a = em.merge(a1); // stores p2.setAddress(a1)
+        em.persist(a3);// persist a3 (event with no p at the moment)
 
         //a.person.name += "X";
         a.getPerson().setName(a.getPerson().getName() + "X");
